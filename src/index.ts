@@ -16,7 +16,7 @@ const opts = {
   baseDir: __dirname
 };
 
-io.on('connection', function(socket) {
+io.on('connection', function(socket: SocketIO.Socket) {
   console.log('Socket connected from... ', socket.client.request.headers.referer);
   socket.on('multiplex-statechanged', function(data) {
     console.log('Event >> State changed from... ', socket.client.request.headers.referer);
@@ -25,6 +25,7 @@ io.on('connection', function(socket) {
     }
     if (createHash(data.secret) === data.socketId) {
       data.secret = null;
+      console.log('Emmiting::: ', { data });
       socket.broadcast.emit(data.socketId, data);
     }
   });
