@@ -30,7 +30,7 @@ io.on( 'connection', function( socket ) {
 
 app.get("/", function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    
+
     const stream = fs.createReadStream(opts.baseDir + '/index.html');
 	stream.on('error', function( error ) {
 		res.write('<h2>Presentation Home Page</h2><h4>To use the server in your presentation please generate a token</h4><a href="/token">Generate Token</a>');
