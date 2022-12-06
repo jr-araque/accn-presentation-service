@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/jr-araque/accn-presentation-service#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "grunt-cli": "^1.3.2",
     "mustache": "~2.2.1",
     "socket.io": "^2.2.0",
